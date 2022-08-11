@@ -18,7 +18,7 @@ colorama.init(autoreset=True)
 import pyfiglet
 
 # Prints the title graphic
-print(pyfiglet.figlet_format("Destination Unknown"))
+print(pyfiglet.figlet_format("Destination Unknown..."))
 
 # Selects a random country from the words.py file and 
 # deselects any countries which name contails a space
@@ -29,3 +29,4 @@ def choose_word():
     while '-' in word or ' ' in word:
         word= random.choice(country)
     return word.lower()
+
