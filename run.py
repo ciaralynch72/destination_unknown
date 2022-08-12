@@ -34,20 +34,28 @@ def introduction_message():
             print(f"{Fore.LIGHTYELLOW_EX}Your name must be alphabetic only")
             continue
         else:
-            print(Fore.RESET + "Destination unknown is a word guessing game.")
-            print("where you are trying to guess the name of a country!")
-            print("Guess one letter at a time")
-            print("Your chances will be based on 1.5 * the lenght of letters")
+            print("\n")
+            print(Fore.RESET + "* Destination unknown is a word guessing game.")
+            print(" where you are trying to guess the name of a country!")
+            print("\n")
+            print("* Guess one letter at a time")
+            print("\n")
+            print("* Your chances will be based on 1.5 * the lenght of letters")
             print("in the countries name.")
-            print("If you guess correct your chances remain the same.")
-            print("If you guess incorrect then you will lose a chance")
-            print("Correct letters will show up in the right order")
+            print("\n")
+            print("* If you guess correct your chances remain the same.")
+            print("\n")
+            print("* If you guess incorrect then you will lose a chance")
+            print("\n")
+            print("* Correct letters will show up in the right order")
             print("to help you figure out the destination.")
+            print("\n")
             print(f'Good luck, {name}!')
+            print("\n")
             break
 
 
-def choose_word():
+def choose_country():
     """
     Selects a random country from the words.py file and
     deselects any countries which name contails a space
@@ -103,14 +111,17 @@ def start_game(word):
     player_guesses = []
     # Gives the player 1.5 times the lenght of the word to guess the country
     chances = len(word)*int(1.5)
+    print("\n")
     print(Fore.LIGHTCYAN_EX + f'The destination has {str(len(word))} letters.')
     while True:
         if chances != 0:
             print("\nYou have " + str(chances) + " chances left.")
             time.sleep(1)
+            print("\n")
             print("Country so far: " + current_country(word, player_guesses))
             time.sleep(1)
             print(Fore.LIGHTCYAN_EX + f'Used letters: {str(player_guesses)}')
+            print("\n")
             guess = input("Guess:\n").lower()[0]
 
             if guess not in player_guesses:
@@ -119,16 +130,20 @@ def start_game(word):
 
             if current_country(word, player_guesses) == word:
                 print(Fore.LIGHTGREEN_EX + f'Yay! You guessed {word.upper()}!')
+                print("\n")
                 print(FIREWORKS)
                 break
 
             else:
                 if guess in word:
+                    print("\n")
                     print(Fore.LIGHTGREEN_EX + "Correct letter!")
                 else:
+                    print("\n")
                     print(Fore.LIGHTYELLOW_EX + guess + " is not correct.")
                     chances -= 1
         else:
+            print("\n")
             print(Fore.RED + "Hard luck! The destination was " + word.upper())
             break
 
@@ -148,15 +163,15 @@ def play_again():
     This function gives the user teh option to play
     again or finish the game.
     """
-    play_again = input("Would you like to continue yes or no?\n")
+    play_again = input("Would you like to play agian? yes or no?\n")
     if play_again == ("yes" or "YES"):
-        choose_word()
+        start_game(word)
     elif play_again == ("no" or "NO"):
         print("Thanks you for playing")
         goodbye_message()
     else:
         print("Sorry invalid entry.")
-        print("Plese enter yes or no.")
+        print("Please enter yes or no.")
 
 
 def clear_screen():
@@ -170,7 +185,7 @@ while True:
     """
     Calls functions to run the game
     """
-    word = choose_word()
+    word = choose_country()
     introduction_message()
     start_game(word)
     play_again()
