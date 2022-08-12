@@ -8,6 +8,8 @@ import sys
 # Used to import a list of countries around the world
 from words import country
 
+# Used to control the pace of the display
+import time
 # Used to import color for the text throughout the game
 import colorama
 from colorama import Fore, Back, Style
@@ -52,9 +54,9 @@ def current_country(word, guesses):
     current_country = ""
     for letter in word:
         if letter in guesses:
-            current_country =+ letter
+            current_country += letter
         else:
-            current_country =+ "*"
+            current_country += "*"
     return current_country
 
 # Global variable used to create a fun display if the user guesses the correct country
@@ -88,7 +90,7 @@ def start_game(word):
         if chances != 0:
             print("\nYou have " + str(chances) + " chances left.")
             time.sleep(1)
-            print("Country so far: " + current_country(word, guesses)(word, player_guesses))
+            print("Country so far: " + current_country(word, player_guesses))
             time.sleep(1)
             print(Fore.LIGHTGREEN_EX + "Letters guessed: " + str(player_guesses))
             guess = input("Guess: ").lower()[0]
@@ -96,7 +98,7 @@ def start_game(word):
             if guess not in player_guesses:
                 player_guesses.append(guess)
 
-            if current_country(word, guesses)(word, player_guesses) == word:
+            if current_country(word, player_guesses) == word:
                 print("\nCongratulations! You guessed the right country: " + word)
                 print(FIREWORKS)
                 break
@@ -108,6 +110,36 @@ def start_game(word):
                     print(guess + " is not in the word.")
                     chances -= 1
         else:
-            print(Fore.LIGHTRED_EX +"Hard luck! The correct country was " + word.upper)
+            print(Fore.LIGHTRED_EX + "Hard luck! The correct country was " + word.upper())
             break
 
+# This prints the goodbye message to the player
+def goodbye_message():
+    """
+   Final function which ends the game if the
+   player wishes
+   It also prints Goodbye message with pyfiglet.
+    """
+    print(pyfiglet.figlet_format(f"Goodbye!"))
+    sys.exit()
+
+# This function give the user the option to play again or 
+# finish playing. 
+
+def play_again():
+    play_again = input("Would you like to continue yes or no?: ")
+    if play_again == ("yes" or "YES"):
+        choose_word()
+    elif play_again == ("no" or "NO"):
+        print("Thank you for playing")
+        goodbye_message()
+    else:
+        print("Sorry invalid entry.")
+        print("Plese enter yes or no.") 
+
+# Calling functions
+while True:
+    word = choose_word()
+    introduction_message()
+    start_game(word)
+    play_again()
