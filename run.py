@@ -103,14 +103,14 @@ def start_game(word):
     player_guesses = []
     # Gives the player 1.5 times the lenght of the word to guess the country
     chances = len(word)*int(1.5)
-    print(Fore.LIGHTCYAN_EX + "The country is " + str(len(word)) + " letters long.")
+    print(Fore.LIGHTCYAN_EX + f'The destination has {str(len(word))} letters.')
     while True:
         if chances != 0:
             print("\nYou have " + str(chances) + " chances left.")
             time.sleep(1)
             print("Country so far: " + current_country(word, player_guesses))
             time.sleep(1)
-            print(Fore.CYAN + "Letters guessed: " + str(player_guesses))
+            print(Fore.LIGHTCYAN_EX + f'Used letters: {str(player_guesses)}')
             guess = input("Guess:\n").lower()[0]
 
             if guess not in player_guesses:
@@ -118,7 +118,7 @@ def start_game(word):
                 clear_screen()
 
             if current_country(word, player_guesses) == word:
-                print(Fore.LIGHTGREEN_EX + f'Congrats {word.upper()} is correct!')
+                print(Fore.LIGHTGREEN_EX + f'Yay! You guessed {word.upper()}!')
                 print(FIREWORKS)
                 break
 
@@ -126,7 +126,7 @@ def start_game(word):
                 if guess in word:
                     print(Fore.LIGHTGREEN_EX + "Correct letter!")
                 else:
-                    print(Fore.LIGHTYELLOW_EX + guess + " is not in the destination.")
+                    print(Fore.LIGHTYELLOW_EX + guess + " is not correct.")
                     chances -= 1
         else:
             print(Fore.RED + "Hard luck! The destination was " + word.upper())
