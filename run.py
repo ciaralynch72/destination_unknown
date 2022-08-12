@@ -1,56 +1,60 @@
-# Used to choose a random country for the game
+"""
+Used for libraries and imports
+"""
 import random
 
-# Used to exit the game when the player chooses
-# not to continue at the end
-import sys
+import sys  # used to exit the game
 
 # Used to import a list of countries around the world
 from words import country
 
-# Used to control the pace of the display
-import time
-# Used to import color for the text throughout the game
-import colorama
-from colorama import Fore, Back, Style
-# Resets the color everytime
-colorama.init(autoreset=True)
+import time  # Used to control the pace of the display
 
-# Used to create the opening and closing graphic
-import pyfiglet
+import colorama  # Used to import color for the text throughout the game
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)  #  Resets the color everytime
+
+import pyfiglet  # Used to create the opening and closing graphic
 
 # Prints the title graphic
 print(pyfiglet.figlet_format("Destination Unknown..."))
 
-# Welcomes the user, asks for their name and provides instructions
-# about how Destination Unknown works. The user name requires the
-# player to use only letters for their name
 
 def introduction_message():
+    """
+    Welcomes the user, asks for their name and provides instructions
+    about how Destination Unknown works. The user name requires the
+    player to use only letters for their name
+    """
     while True:
         name = input(f"{Fore.GREEN}What is your name?\n")
         if not name.isalpha():
             print(f"{Fore.LIGHTYELLOW_EX}Your name must be alphabetic only")
             continue
         else:
-            print("Destination unknown is a word guessing game")
+            print(Fore.RESET + "Destination unknown is a word guessing game")
             print("where you are trying to guess the name of a country!")
             print("You chances will be based on 1.5 * the lenght of letters in the country")
             print(f'Good luck, {name}!')
             break
 
-# Selects a random country from the words.py file and 
-# deselects any countries which name contails a space
-# or a hyphen. Also returns a lower case word. 
-
 def choose_word():
+    """
+    Selects a random country from the words.py file and 
+    deselects any countries which name contails a space
+    or a hyphen. Also returns a lower case word.
+    """
     word = random.choice(country)
     while '-' in word or ' ' in word:
         word= random.choice(country)
     return word.lower()
 
-# Function to show correct letter guessed in the correct position in the current country
 def current_country(word, guesses):
+    """
+    If the players guess is corret the letter will show
+    in the word. if not an asterik will show until the 
+    user guesses the correct letter eg. *a*a*a
+    """
     current_country = ""
     for letter in word:
         if letter in guesses:
@@ -59,7 +63,7 @@ def current_country(word, guesses):
             current_country += "*"
     return current_country
 
-# Global variable used to create a fun display if the user guesses the correct country
+# Variable to create graphic if the player guesses the country. 
 FIREWORKS = """
                                  .''.
        .''.             *''*    :_\/_:     . 
@@ -76,11 +80,12 @@ FIREWORKS = """
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 """
 
-# Main funtion to run the word game. This includes the code for the player too
-# input their name, take a guess, the amount of chances they have left and
-# lets the user know if they have won or not
-
 def start_game(word):
+    """
+    Function used to start and run the game. The includes the code
+    for the player to take a guess, the amount of chances they have 
+    left and lets the user know if they have won or not.
+    """
     # create an emply list to display player guesses 
     player_guesses = []
     # Gives the player 1.5 times the lenght of the word to guess the country
@@ -110,23 +115,23 @@ def start_game(word):
                     print(guess + " is not in the word.")
                     chances -= 1
         else:
-            print(Fore.LIGHTRED_EX + "Hard luck! The correct country was " + word.upper())
+            print(Fore.RED + "Hard luck! The correct country was " + word.upper())
             break
 
-# This prints the goodbye message to the player
 def goodbye_message():
     """
-   Final function which ends the game if the
-   player wishes
-   It also prints Goodbye message with pyfiglet.
+    Final function which ends the game if the
+    player wishes. It also prints Goodbye message 
+    with pyfiglet.
     """
     print(pyfiglet.figlet_format(f"Goodbye!"))
     sys.exit()
 
-# This function give the user the option to play again or 
-# finish playing. 
-
 def play_again():
+    """
+    This function gives the user teh option to play 
+    again or finish the game. 
+    """
     play_again = input("Would you like to continue yes or no?: ")
     if play_again == ("yes" or "YES"):
         choose_word()
@@ -137,8 +142,10 @@ def play_again():
         print("Sorry invalid entry.")
         print("Plese enter yes or no.") 
 
-# Calling functions
 while True:
+    """
+    Calls functions to run the game
+    """
     word = choose_word()
     introduction_message()
     start_game(word)
