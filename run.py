@@ -21,12 +21,12 @@ import pyfiglet
 print(pyfiglet.figlet_format("Destination Unknown..."))
 
 # Welcomes the user, asks for their name and provides instructions
-# about how Destination Unknown works
+# about how Destination Unknown works. The user name requires the
+# player to use only letters for their name
 
 def introduction_message():
     while True:
         name = input(f"{Fore.GREEN}What is your name?\n")
-
         if not name.isalpha():
             print(f"{Fore.LIGHTYELLOW_EX}Your name must be alphabetic only")
             continue
@@ -35,7 +35,6 @@ def introduction_message():
             print("where you are trying to guess the name of a country!")
             print("You chances will be based on 1.5 * the lenght of letters in the country")
             print(f'Good luck, {name}!')
-
             break
 
 # Selects a random country from the words.py file and 
@@ -84,3 +83,31 @@ def start_game(word):
     player_guesses = []
     # Gives the player 1.5 times the lenght of the word to guess the country
     chances = len(word)*int(1.5)
+    print(Fore.CYAN + "You are looking for a country that is " + str(len(word)) + " letters long.")
+    while True:
+        if chances != 0:
+            print("\nYou have " + str(chances) + " chances left.")
+            time.sleep(1)
+            print("Country so far: " + current_country(word, guesses)(word, player_guesses))
+            time.sleep(1)
+            print(Fore.LIGHTGREEN_EX + "Letters guessed: " + str(player_guesses))
+            guess = input("Guess: ").lower()[0]
+
+            if guess not in player_guesses:
+                player_guesses.append(guess)
+
+            if current_country(word, guesses)(word, player_guesses) == word:
+                print("\nCongratulations! You guessed the right country: " + word)
+                print(FIREWORKS)
+                break
+
+            else:
+                if guess in word:
+                    print(Fore.GREEN + "Correct letter!")
+                else:
+                    print(guess + " is not in the word.")
+                    chances -= 1
+        else:
+            print(Fore.LIGHTRED_EX +"Hard luck! The correct country was " + word.upper)
+            break
+
