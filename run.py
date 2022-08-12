@@ -30,6 +30,7 @@ def introduction_message():
     """
     while True:
         name = input(f"{Fore.LIGHTGREEN_EX}What is your name?\n")
+        clear_screen()
         if not name.isalpha():
             print(f"{Fore.LIGHTYELLOW_EX}Your name must be alphabetic only")
             continue
@@ -132,7 +133,7 @@ def start_game(word):
                 print(Fore.LIGHTGREEN_EX + f'Yay! You guessed {word.upper()}!')
                 print("\n")
                 print(FIREWORKS)
-                play_again()
+               
                 break
 
             else:
@@ -146,7 +147,6 @@ def start_game(word):
         else:
             print("\n")
             print(Fore.RED + "Hard luck! The destination was " + word.upper())
-            
             break
 
 
@@ -166,9 +166,9 @@ def play_again():
     again or finish the game.
     """
     play_again = input("Would you like to play again? yes or no?\n")
-    if play_again == ("yes" or "YES"):
+    if play_again == ("yes"):
         choose_country()
-    elif play_again == ("no" or "NO"):
+    elif play_again == ("no"):
         print("Thanks you for playing")
         goodbye_message()
     else:
