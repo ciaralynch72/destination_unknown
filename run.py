@@ -20,6 +20,24 @@ import pyfiglet
 # Prints the title graphic
 print(pyfiglet.figlet_format("Destination Unknown..."))
 
+# Welcomes the user, asks for their name and provides instructions
+# about how Destination Unknown works
+
+def introduction_message():
+    while True:
+        name = input(f"{Fore.GREEN}What is your name?\n")
+
+        if not name.isalpha():
+            print(f"{Fore.LIGHTYELLOW_EX}Your name must be alphabetic only")
+            continue
+        else:
+            print("Destination unknown is a word guessing game")
+            print("where you are trying to guess the name of a country!")
+            print("You chances will be based on 1.5 * the lenght of letters in the country")
+            print(f'Good luck, {name}!')
+
+            break
+
 # Selects a random country from the words.py file and 
 # deselects any countries which name contails a space
 # or a hyphen. Also returns a lower case word. 
