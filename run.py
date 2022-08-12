@@ -19,7 +19,7 @@ colorama.init(autoreset=True)  # Resets the color everytime
 import pyfiglet  # Used to create the opening and closing graphic
 
 # Prints the title graphic
-print(pyfiglet.figlet_format("Destination Unknown..."))
+print(pyfiglet.figlet_format("Destination Unknown...", justify="center"))
 
 
 def introduction_message():
@@ -36,13 +36,14 @@ def introduction_message():
             continue
         else:
             print("\n")
-            print(Fore.RESET + "* Destination unknown is a word guessing game.")
-            print(" where you are trying to guess the name of a country!")
+            print(Fore.RESET + "* Destination Unknown is a word guessing")
+            print(" game where the player is trying to guess the name")
+            print(" off a country!")
             print("\n")
             print("* Guess one letter at a time")
             print("\n")
-            print("* Your chances will be based on 1.5 * the lenght of letters")
-            print("in the countries name.")
+            print("* Your chances will be based on 1.5 * the lenght of")
+            print("letters in the countries name.")
             print("\n")
             print("* If you guess correct your chances remain the same.")
             print("\n")
@@ -117,10 +118,10 @@ def start_game(word):
     while True:
         if chances != 0:
             print("\nYou have " + str(chances) + " chances left.")
-            time.sleep(1)
+            time.sleep(0.5)
             print("\n")
             print("Country so far: " + current_country(word, player_guesses))
-            time.sleep(1)
+            time.sleep(0.5)
             print(Fore.LIGHTCYAN_EX + f'Used letters: {str(player_guesses)}')
             print("\n")
             guess = input("Guess:\n").lower()[0]
@@ -133,7 +134,6 @@ def start_game(word):
                 print(Fore.LIGHTGREEN_EX + f'Yay! You guessed {word.upper()}!')
                 print("\n")
                 print(FIREWORKS)
-               
                 break
 
             else:
@@ -156,7 +156,7 @@ def goodbye_message():
     player wishes. It also prints Goodbye message
     with pyfiglet.
     """
-    print(pyfiglet.figlet_format(f"Goodbye!"))
+    print(pyfiglet.figlet_format(f"Goodbye!", justify="center"))
     sys.exit()
 
 
@@ -165,7 +165,7 @@ def play_again():
     This function gives the user the option to play
     again or finish the game.
     """
-    play_again = input("Would you like to play again? yes or no?/n")
+    play_again = input("Would you like to play again? yes or no?\n")
     if play_again == ("yes"):
         choose_country()
     elif play_again == ("no"):
@@ -173,7 +173,8 @@ def play_again():
         goodbye_message()
     else:
         print("Sorry invalid entry.")
-       
+        print("Please type yes or no")
+
 
 def clear_screen():
     """
