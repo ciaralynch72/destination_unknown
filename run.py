@@ -111,7 +111,7 @@ def start_game(word):
             print("Country so far: " + current_country(word, player_guesses))
             time.sleep(1)
             print(Fore.CYAN + "Letters guessed: " + str(player_guesses))
-            guess = input("Guess: ").lower()[0]
+            guess = input("Guess:\n").lower()[0]
 
             if guess not in player_guesses:
                 player_guesses.append(guess)
@@ -148,7 +148,7 @@ def play_again():
     This function gives the user teh option to play
     again or finish the game.
     """
-    play_again = input("Would you like to continue yes or no?: ")
+    play_again = input("Would you like to continue yes or no?\n")
     if play_again == ("yes" or "YES"):
         choose_word()
     elif play_again == ("no" or "NO"):
