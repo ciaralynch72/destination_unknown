@@ -50,7 +50,7 @@ def introduction_message():
             print("* Correct letters will show up in the right order")
             print("to help you figure out the destination.")
             print("\n")
-            print(f'Good luck, {name}!')
+            print(f'Good luck, {Fore.LIGHTGREEN_EX}{name}!')
             print("\n")
             break
 
@@ -132,6 +132,7 @@ def start_game(word):
                 print(Fore.LIGHTGREEN_EX + f'Yay! You guessed {word.upper()}!')
                 print("\n")
                 print(FIREWORKS)
+                play_again()
                 break
 
             else:
@@ -145,6 +146,7 @@ def start_game(word):
         else:
             print("\n")
             print(Fore.RED + "Hard luck! The destination was " + word.upper())
+            
             break
 
 
@@ -160,19 +162,18 @@ def goodbye_message():
 
 def play_again():
     """
-    This function gives the user teh option to play
+    This function gives the user the option to play
     again or finish the game.
     """
-    play_again = input("Would you like to play agian? yes or no?\n")
+    play_again = input("Would you like to play again? yes or no?\n")
     if play_again == ("yes" or "YES"):
-        start_game(word)
+        choose_country()
     elif play_again == ("no" or "NO"):
         print("Thanks you for playing")
         goodbye_message()
     else:
         print("Sorry invalid entry.")
-        print("Please enter yes or no.")
-
+       
 
 def clear_screen():
     """
