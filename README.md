@@ -77,18 +77,15 @@ The following steps were then taken:
 4. Next select your region.
 5. Click on the Create App button.
 6. Click on the Settings Tab and scroll down to Config Vars.
-7. Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button.
-8. Input CREDS and the content of your Google Sheet API creds file as another config var and click add.
-9. In the next Key box enter OXFORD_API_APP_ID and add your unique ID to the value box. 
-10. In the next Key box enter OXFORD_API_APP_KEY and add your unique key to the value box. 
-11. Next, scroll down to the Buildpack section click Add Buildpack select Python and click Save Changes
-12. Repeat step 11 to add node.js. Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
-13. Scroll to the top of the page and choose the Deploy tab.
-14. Select Github as the deployment method.
-15. Confirm you want to connect to GitHub.
-16. Search for the repository name and click the connect button.
-17. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
-18. Click View to view the deployed site.
+7. Click Reveal Config Vars and enter PORT into the Key box and 8000 into the Value box and click the Add button.
+8. Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
+9. Repeat step 11 to add node.js. Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
+10. Scroll to the top of the page and choose the Deploy tab.
+11. Select Github as the deployment method.
+12. Confirm you want to connect to GitHub.
+13. Search for the repository name and click the connect button.
+14. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. I chose automatic for this app. 
+15. Click View to view the deployed site.
 
 The site is now live and operational.
 

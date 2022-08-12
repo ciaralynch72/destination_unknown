@@ -29,7 +29,7 @@ def introduction_message():
     player to use only letters for their name
     """
     while True:
-        name = input(f"{Fore.GREEN}What is your name?\n")
+        name = input(f"{Fore.LIGHTGREEN_EX}What is your name?\n")
         if not name.isalpha():
             print(f"{Fore.LIGHTYELLOW_EX}Your name must be alphabetic only")
             continue
@@ -103,7 +103,7 @@ def start_game(word):
     player_guesses = []
     # Gives the player 1.5 times the lenght of the word to guess the country
     chances = len(word)*int(1.5)
-    print(Fore.CYAN + "The country is " + str(len(word)) + " letters long.")
+    print(Fore.LIGHTCYAN_EX + "The country is " + str(len(word)) + " letters long.")
     while True:
         if chances != 0:
             print("\nYou have " + str(chances) + " chances left.")
@@ -118,15 +118,15 @@ def start_game(word):
                 clear_screen()
 
             if current_country(word, player_guesses) == word:
-                print(Fore.GREEN + "Congrats" + word.upper() + "was correct")
+                print(Fore.LIGHTGREEN_EX + f'Congrats {word.upper()} is correct!')
                 print(FIREWORKS)
                 break
 
             else:
                 if guess in word:
-                    print(Fore.GREEN + "Correct letter!")
+                    print(Fore.LIGHTGREEN_EX + "Correct letter!")
                 else:
-                    print(Fore.YELLOW + guess + " is not in the destination.")
+                    print(Fore.LIGHTYELLOW_EX + guess + " is not in the destination.")
                     chances -= 1
         else:
             print(Fore.RED + "Hard luck! The destination was " + word.upper())
