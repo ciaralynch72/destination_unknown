@@ -165,7 +165,7 @@ def play_again():
     This function gives the user the option to play
     again or finish the game.
     """
-    play_again = input("Would you like to play again? yes or no?\n")
+    play_again = input("Would you like to play again? yes or no?/n")
     if play_again == ("yes"):
         choose_country()
     elif play_again == ("no"):
