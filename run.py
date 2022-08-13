@@ -42,7 +42,7 @@ def introduction_message():
             print("\n")
             print("* Guess one letter at a time")
             print("\n")
-            print("* Your chances will be based on 1.5 * the lenght of")
+            print("* Your chances will be based on 1.5 * the length of")
             print("letters in the countries name.")
             print("\n")
             print("* If you guess correct your chances remain the same.")
@@ -111,7 +111,7 @@ def start_game(word):
     """
     # create an emply list to display player guesses
     player_guesses = []
-    # Gives the player 1.5 times the lenght of the word to guess the country
+    # Gives the player 1.5 times the length of the word to guess the country
     chances = len(word)*int(1.5)
     print("\n")
     print(Fore.LIGHTCYAN_EX + f'The destination has {str(len(word))} letters.')
