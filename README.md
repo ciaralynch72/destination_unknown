@@ -1,5 +1,6 @@
 # Destination Unknown...
-Destiination Unkown is a simple word guessing game that I created where the word guessed by the player is a country from around the world. The name is a play on the popular song Destination Unknown by Alex Gaudino which I unknowingly kept singing while I was working on this game. Sorry if it is now in your head also!
+![Welcome Title](docs/readme_images/amiresponsive.JPG)
+Destination Unkown is a simple word guessing game that I created where the word guessed by the player is a country from around the world. The name is a play on the popular song Destination Unknown by Alex Gaudino which I unknowingly kept singing while I was working on this game. Sorry if it is now in your head also!
 
 The game follows the same logic as most guessing word games. The user is told how many chances they have, calculated to be 1.5 times the lenght of the word. Everytime they get a letter right it will show up in the word eg. the user guesses 'a' this then reveals it was a correct guess and shows the word as *a*a*a. If the user guesses wrong then there chances decrease. A list of already guessed letters is shown to the user so that they can try and figure out the country before they run out of lives. 
 
@@ -32,12 +33,61 @@ It is a fun game to play for all ages and is suprisinly hard at times so I reall
 ## Logic Flow
 In order for me to work throught the logic of how the game would work and what python code I would need to write I created a flow chart using Lucid Chart. It was very beneficial for me to have a flow chart while working on this game as it kept me focused on the task at hand and allow me to build out the basic code to create this site. As new student of python I found this helped me greatly to get a grasp of the task at hand and to break it down into simple code I could write myself.
 
-![Flow Chart](docs/word_app_flow.JPG)
+![Flow Chart](docs/readme_images/word_app_flow.JPG)
 
 ## Features
 #### Title
+I created the title by importing pyfiglet in my run.py. I chose this as I liked the old school look and feel to the to graphics. I feel it suits the look and feel of the terminal
+![Welcome Title](docs/readme_images/welcome_title.JPG)
+
 
 #### Welcome Message
+
+The user is asked to submit their name and given a description of the game so that they know how to play the game. 
+
+![Introduction](docs/readme_images/intro.JPG)
+
+#### Destination information
+
+The user will be told how many letter are in the destination word and told how many chances they have to guess the correct destination. 
+
+![Guess](docs/readme_images/guess.JPG)
+
+#### Timed next steps
+
+Once the user begins guessing the letters that could be in the the destination they will be told
+if there guess is correct or not. For each guess the screen will clear and tell the user how many goes they have left. The information will appear with .5 second delay. I have used different colored fonts to head with readability for the user and to help keep them engaged. 
+
+![Screen during the game](docs/readme_images/correct_guess.JPG)
+
+#### You Win
+
+If the user guesses the destination they will get a message and then be asked if they woudl like to play again.
+![You win](docs/readme_images/youwin.JPG)
+
+#### You Lose
+
+If the user runs out of chances they will lose. They will be told the correct destination and asked if they would like to play again
+
+#### Play Again
+
+If the user choses to play again they will be brought back to the start.
+
+#### Player chooses not play again
+If the player chooses not to play again then they are thanked and receive a goodbye graphic using pyfiglet.
+![Goodbye](docs/readme_images/goodbye.JPG) 
+
+## Future Features
+As this is my first experience with python I kept this app extremely simple so there is many features I would like to implement in the future as I was build on my knowledge. I was also time shy so I stuck to the basics. 
+- I would like implement different levels of difficulty.
+- I would like to create an option of choosing either a capital city or country for the user to change up the game while they play. 
+- I would like to add some more graphics and develop the ux design to make it more appealing.
+- As my skills with python develop I am sure that this app's code could be written much neater and more concise. Once I finish this course I look forward to reviewing it. Hopefully with a much better eye.  
+
+
+
+
+
 
 
 
@@ -46,27 +96,13 @@ In order for me to work throught the logic of how the game would work and what p
 
 
 ## Deployment
-----------------------Fix  this as GitHub was only used for bits
 
-This site was deployed via GitHub pages using the following steps:
-1. Open GitHub and locate the [O Canada Quiz Repository](https://github.com/ciaralynch72/oh_canada_quiz)
-2. At the top of the repository, locate the "Settings" button on the menu
-2. In the left-hand navigation section scroll down to the **Pages** button
-3. From the source section drop-down menu change Branch from **none** to **main** and click the **Save**
-4. After several minutes the website will be live and and there will be the link to [live site](https://ciaralynch72.github.io/oh_canada_quiz/)
+This code was connect to Heroku via GitHub  using the following steps:
+1. I created the repository from the Code Institute Python template.
 
 ## Clone Project ##
 
-1. Go to Git Hub
-2. Go to [O Canada Quiz Repository](https://github.com/ciaralynch72/oh_canada_quiz)
-3. Click on it to go to main repository site
-4. Click on the Code drop down button menu next to the greeen Gippod button
-5. Click on HTTP section you will see the http of the repository click on the window next to it it will say copied
-6. Clikced on Download and Zip
-7. Clicked on Open with GitHubDesktop
-
-
-The site was deployed via [Heroku](https://dashboard.heroku.com/apps), and the live link can be found here: [Word-Py](https://word-py.herokuapp.com/)
+The site was deployed via [Heroku](https://dashboard.heroku.com/apps), and the live link can be found here: [Destination Unknown](https://destinationunknown1.herokuapp.com/)
 
 Before deploying to Heroku pip3 freeze > requirements.txt was used to add all the dependencies required to the requirements.txt file. This is required for the game to run on Heroku.
 
@@ -84,7 +120,8 @@ The following steps were then taken:
 11. Select Github as the deployment method.
 12. Confirm you want to connect to GitHub.
 13. Search for the repository name and click the connect button.
-14. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. I chose automatic for this app. 
+14. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. I chose to deploy automatically as heroku is a new
+platform for me so I wanted to make sure my final code was deployed. 
 15. Click View to view the deployed site.
 
 The site is now live and operational.

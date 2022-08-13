@@ -169,11 +169,12 @@ def play_again():
     if play_again == ("yes"):
         choose_country()
     elif play_again == ("no"):
-        print("Thanks you for playing")
+        print(Fore.LIGHTGREEN_EX + "Thanks you for playing!")
         goodbye_message()
     else:
         print("Sorry invalid entry.")
-        print("Please type yes or no")
+        print(input("Please type yes or no?\n"))
+        
 
 
 def clear_screen():
