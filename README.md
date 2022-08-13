@@ -214,6 +214,9 @@ The basic copy included in this site was written by the designer.
 - #### Design
 Design was inspired from the traditional colors of a globe. 
 
+- #### Country List
+I found the list of country from this website [Country List](https://pytutorial.com/python-country-list)
+
 - #### Online learning resources
 Stackoverflow, YouTube, blogs, and tutorials. I have used the following tutorials as inspiration to create this app [Hangman Tutorial](https://www.youtube.com/watch?v=cJJTnI22IF8&t=145s), [ Wordle Tutorial](https://www.youtube.com/watch?v=J6h7D2iQmBU). There were many more online resources that I used throughout building this app and each one expanded basic knowledge of python. 
 
