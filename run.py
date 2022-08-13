@@ -12,11 +12,11 @@ from words import country
 
 import time  # Used to control the pace of the display
 
+import pyfiglet  # Used to create the opening and closing graphic
+
 import colorama  # Used to import color for the text throughout the game
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)  # Resets the color everytime
-
-import pyfiglet  # Used to create the opening and closing graphic
 
 # Prints the title graphic
 print(pyfiglet.figlet_format("Destination Unknown...", justify="center"))
@@ -88,7 +88,7 @@ def current_country(word, guesses):
 # Variable to create graphic if the player guesses the country.
 FIREWORKS = """
                                  .''.
-      .''.             *''*    :_\/_:     . 
+      .''.             *''*    :_\/_:     .
       :_\/_:   .    .:.*_\/_*   : /\ :  .'.:.'.
   .''.: /\ : _\(/_  ':'* /\ *  : '..'.  -=:o:=-
  :_\/_:'.:::. /)\*''*  .|.* '.\'/.'_\(/_'.':'.'
@@ -120,7 +120,7 @@ def start_game(word):
             print("\nYou have " + str(chances) + " chances left.")
             time.sleep(0.5)
             print("\n")
-            print("Country so far: " + current_country(word, player_guesses))
+            print("Country: " + current_country(word, player_guesses))
             time.sleep(0.5)
             print(Fore.LIGHTCYAN_EX + f'Used letters: {str(player_guesses)}')
             print("\n")
@@ -165,16 +165,15 @@ def play_again():
     This function gives the user the option to play
     again or finish the game.
     """
-    play_again = input("Would you like to play again? yes or no?\n")
-    if play_again == ("yes"):
+    go_again = input("Would you like to play again? yes or no?\n")
+    if go_again == ("yes"):
         choose_country()
-    elif play_again == ("no"):
+    elif go_again == ("no"):
         print(Fore.LIGHTGREEN_EX + "Thanks you for playing!")
         goodbye_message()
     else:
         print("Sorry invalid entry.")
-        print(input("Please type yes or no?\n"))
-        
+        play_again()
 
 
 def clear_screen():

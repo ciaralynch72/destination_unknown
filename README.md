@@ -17,7 +17,7 @@ It is a fun game to play for all ages and is suprisinly hard at times so I reall
 8. If the answer is yes the game restarts. If the answer is no then the game ends. 
 
 ## Site Owner Goals
-- To create an app that would simple an easy to use
+- To create an app that would be simple and easy to use for anyone 8+
 - To give the user clear instructions on how to play 
 - To provide a clean and logical interface that would have players return to play again
 - For the user to have fun and share it with friends
@@ -34,6 +34,16 @@ It is a fun game to play for all ages and is suprisinly hard at times so I reall
 In order for me to work throught the logic of how the game would work and what python code I would need to write I created a flow chart using Lucid Chart. It was very beneficial for me to have a flow chart while working on this game as it kept me focused on the task at hand and allow me to build out the basic code to create this site. As new student of python I found this helped me greatly to get a grasp of the task at hand and to break it down into simple code I could write myself.
 
 ![Flow Chart](docs/readme_images/word_app_flow.JPG)
+
+## Design Choices 
+
+When creating this game I decided to use some colored fonts to help with the user experience. As the game is called Destination Unknown I decided to use colors that are found on the globe, green and blue and I also added some yellow and red too for the user to differenctiate different results. 
+
+I had written the functions so that only uppercase letters could be entered but as a user I found this frustrating so I removed it so that it would accept either lower or upper case and I found it made the game more enjoyable. 
+
+I sped up the time sleep function as the more I played the game the less I, as a user, wanted to play. 
+
+I also increased the amount of chances the user gets from 1.2 * the lenght of the destination to 1.5* as some of the countries are really tricky. I found as a user I wanted to have a few more guesses. 
 
 ## Features
 #### Title
@@ -78,19 +88,76 @@ If the player chooses not to play again then they are thanked and receive a good
 ![Goodbye](docs/readme_images/goodbye.JPG) 
 
 ## Future Features
-As this is my first experience with python I kept this app extremely simple so there is many features I would like to implement in the future as I was build on my knowledge. I was also time shy so I stuck to the basics. 
+As this is my first experience with python I kept this app extremely simple so there is many features I would like to implement in the future as I was build on my knowledge. I was also time shy so I stuck to the basics. I feel alot of these functions would be within my capabilities if I had a little more time but this is down to life and work getting busy for this module. I did however really enjoy learning python and look forward to implementing these in the future. 
+
 - I would like implement different levels of difficulty.
 - I would like to create an option of choosing either a capital city or country for the user to change up the game while they play. 
 - I would like to add some more graphics and develop the ux design to make it more appealing.
-- As my skills with python develop I am sure that this app's code could be written much neater and more concise. Once I finish this course I look forward to reviewing it. Hopefully with a much better eye.  
+- As my skills with python develop I am sure that this app's code could be written much neater and more concise. Once I finish this course I look forward to reviewing it. Hopefully with a much better eye. 
+- Add the function to only choose letters as currently numbers are also accepted. Sadly due to time contstraints I realized this too late. 
+- Add to the function to only be able to choose a letter once and produce a value error
 
 
+## Technologies Used
+I have used several technologies that have enabled this design to work:
+
+- [random](https://docs.python.org/3/library/random.html?highlight=random#module-random) - `random.choice` is used to select a random word for the game from words.py.
+- os.system` is used to clear the terminal after each guess.  
+- [pyfiglet](https://pypi.org/project/pyfiglet/0.7/) - for taking ASCII text and rendering it into ASCII art fonts.
+- [colorama](https://pypi.org/project/colorama/) - for adding colour to terminal text.
+- [GitHub](https://github.com/) - used for version control.
+- [Heroku](https://dashboard.heroku.com/apps) -  used to deploy the live project.
+- [Lucidchart](https://lucid.app/documents#/dashboard) -  used to create my flowchart.
+- [PEP8 Online](http://pep8online.com/) - used to validate all the code.
+- [Grammerly](https://app.grammarly.com/) - used to proof read the README.md.
+
+## Testing
+#### User Stories 
+ Expectations
+      As a user I wanted to:
+      1. To be able to run the program
+      2. Input my user name
+      3. Be presented in information on how the game works
+      4. Know how many chances I get to guess the destination
+      5. Enter my guess
+      6. See my progression
+      7. Find out the correct destination either by guessing or losing 
+      8. Have an option to play again
+Results
+      As a user I was able to:
+      1. Run the program
+      2. Input my user name
+      3. Read information about how the game works and know how to play
+      4. Enter my guesses one at a time
+      5. See how many chances I have left
+      6. Try to figure out the correct destination via the correct letters I have guessed
+      7. Play again if I wish to do so
+
+#### Manual Testing
+Throughout working on the project I used the terminal while I was building the funtions. I used a practice repository to figure out the flow and functions and then built out that
+
+| Feature           |  Expect              |  Action |  Result                 |
+|-------------------|----------------------|---------|-------------------------|
+|Input Name         |To enter my name      |Type  |Terminal prints back my name|
+|Enter a guess      |To be able to type a letter|Type |I can enter a letter |
+|Know how many chances I have|To be told I have X chances |N/A |I know how many chances I have  |
+|Know if a guess is correct or incorrect|To see right/wrong letters|N/A |I know what letters are right/wrong|
+|Be told the outcome |Know if I win/lose   |N/A |I find out if I win/lose|
+|Play again     |An option to play again |Type |I can choose to play again or exit the game |
 
 
+- I had many good friends test the app for me on both laptop and desktops and I got some nice feed back on it being a fun game to play.
+- I did test on mobile and it can be played but there seems to be a bug where by it repeats the user name and guesses at ever guess. The game can still be played it's just not a great user experience.
 
+#### Validator Testing
 
+I tested my code on PEP8 and initially had quite a few errors. Nothing major just trailing white space, expected two blank lines, lines too long etc. I was able to fix all of this without too much hassle and it was a great learning experience to help me gain practice in what is expected of python. All errors were clear at the time of final deployment.
 
+![PEP8](docs/readme_images/pep8-final.JPG)
 
+I also tested the site on Lighthouse with good results.
+
+![Lighthouse](docs/readme_images/lighthouse.JPG)
 
 
 
