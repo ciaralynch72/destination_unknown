@@ -85,6 +85,18 @@ def current_country(word, guesses):
     return current_country
 
 
+def all_letter_only():
+    """
+    this function will allow user to select
+    only letters and no character or numbers
+    """
+    while True:
+        user_input_letter = input("type a letter: \n").lower()
+        if not user_input_letter.isalpha():
+            print('Error, please select a letter')
+        else:
+            return user_input_letter
+
 # Variable to create graphic if the player guesses the country.
 FIREWORKS = """
                                  .''.
@@ -124,7 +136,7 @@ def start_game(word):
             time.sleep(0.5)
             print(Fore.LIGHTCYAN_EX + f'Used letters: {str(player_guesses)}')
             print("\n")
-            guess = input("Guess:\n").lower()[0]
+            guess = all_letter_only()[0]
 
             if guess not in player_guesses:
                 player_guesses.append(guess)
@@ -191,3 +203,4 @@ while True:
     introduction_message()
     start_game(word)
     play_again()
+  
