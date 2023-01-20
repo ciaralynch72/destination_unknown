@@ -1,6 +1,7 @@
 # [Destination Unknown...](https://destinationunknown1.herokuapp.com/)
 
 ![Welcome Title](docs/readme_images/amiresponsive.JPG)
+
 Destination Unknown is a simple word guessing game that I created where the word guessed by the player is a country from around the world. The name is a play on the popular song Destination Unknown by Alex Gaudino which I unknowingly kept singing while I was working on this game. Sorry if it is now in your head also!
 
 The game follows the same logic as most guessing word games. The user is told how many chances they have, calculated to be 1.5 times the length of the word. Every time they get a letter right it will show up in the word e.g. the user guesses 'a' this then reveals it was a correct guess and shows the word as *a*a*a. If the user guesses wrong then their chances decrease. A list of already guessed letters is shown to the user so that they can try and figure out the destination before they run out of lives. 
@@ -74,7 +75,9 @@ if their guess is correct or not. For each guess the screen will clear and tell 
 #### You Win
 
 If the user guesses the destination, they will get a message and then be asked if they woudl like to play again.
+
 ![You win](docs/readme_images/youwin.JPG)
+
 
 #### You Lose
 
@@ -89,14 +92,11 @@ If the player chooses not to play again then they are thanked and receive a good
 ![Goodbye](docs/readme_images/goodbye.JPG) 
 
 ## Future Features
-As this is my first experience with python I kept this app extremely simple so there is many features I would like to implement in the future as I was build on my knowledge. I was also time shy so I stuck to the basics. I feel alot of these functions would be within my capabilities if I had a little more time but this is down to life and work getting busy for this module. I did however really enjoy learning python and look forward to implementing these in the future. 
-
+As this is my first experience with python I kept this app extremely simple so there is many features I would like to implement in the future as I was build on my knowledge.
 - I would like to implement different levels of difficulty.
 - I would like to create an option of choosing either a capital city or country for the user to change up the game while they play. 
 - I would like to add some more graphics and develop the ux design to make it more appealing.
 - As my skills with python develop I am sure that this app's code could be written much neater and more concise. Once I finish this course I look forward to reviewing it. Hopefully with a much better eye. 
-- Add the function to only choose letters as currently numbers are also accepted. Sadly due to time constraints I realized this too late. 
-- Add to the function to only be able to choose a letter once and produce a value error
 
 
 ## Technologies Used
@@ -109,7 +109,7 @@ I have used several technologies that have enabled this design to work:
 - [GitHub](https://github.com/) - used for version control.
 - [Heroku](https://dashboard.heroku.com/apps) -  used to deploy the live project.
 - [Lucidchart](https://lucid.app/documents#/dashboard) -  used to create my flowchart.
-- [PEP8 Online](http://pep8online.com/) - used to validate all the code.
+- [PEP8ci Online](https://pep8ci.herokuapp.com/) - used to validate all the code.
 - [Grammerly](https://app.grammarly.com/) - used to proof read the README.md.
 
 ## Testing
@@ -122,8 +122,10 @@ I have used several technologies that have enabled this design to work:
       4. Know how many chances I get to guess the destination
       5. Enter my guess
       6. See my progression
-      7. Find out the correct destination either by guessing or losing 
-      8. Have an option to play again
+      7. Know how many guesses I have left
+      8. Be told if I have already guessed a letter
+      9. Find out the correct destination either by guessing or losing 
+      10. Have an option to play again
 Results
       As a user I was able to:
       1. Run the program
@@ -131,6 +133,7 @@ Results
       3. Read information about how the game works and know how to play
       4. Enter my guesses one at a time
       5. See how many chances I have left
+      6. I was told if I already guessed that letter
       6. Try to figure out the correct destination via the correct letters I have guessed
       7. Play again if I wish to do so
 
@@ -141,7 +144,8 @@ Throughout working on the project I used the terminal while I was building the f
 |-------------------|----------------------|---------|-------------------------|
 |Input Name         |To enter my name      |Type  |Terminal prints back my name|
 |Enter a guess      |To be able to type a letter|Type |I can enter a letter |
-|Know how many chances I have|To be told I have X chances |N/A |I know how many chances I have  |
+|To only be able to add a letter as a guess     |To only accept letters as a guess|Type |I get an error message if I enter a non alphabetical character|
+|Know how many chances I have left|To be told I have X chances |N/A |I know how many chances I have  |
 |Know if a guess is correct or incorrect|To see right/wrong letters|N/A |I know what letters are right/wrong|
 |Be told the outcome |Know if I win/lose   |N/A |I find out if I win/lose|
 |Play again     |An option to play again |Type |I can choose to play again or exit the game |
@@ -152,9 +156,9 @@ Throughout working on the project I used the terminal while I was building the f
 
 #### Validator Testing
 
-I tested my code on PEP8 and initially had quite a few errors. Nothing major just trailing white space, expected two blank lines, lines too long etc. I was able to fix all of this without too much hassle and it was a great learning experience to help me gain practice in what is expected of python. All errors were clear at the time of final deployment.
+I tested my code on PEP8ci and initially had quite a few errors. Nothing major just trailing white space, expected two blank lines, lines too long etc. I was able to fix all of this without too much hassle. The graphic that displays after a player guesses the correct capital is still showing errors due to the characters used but this is solely for design and is not connected to code issues. 
 
-![PEP8](docs/readme_images/pep8-final.JPG)
+![PEP8ci](docs/readme_images/ci_python_linter.JPG)
 
 I also tested the site on Lighthouse with good results.
 
@@ -168,13 +172,13 @@ I ran into issues with my play_again function but was able to solve this by chan
 
 ![Play_again Bug](docs/readme_images/bug.JPG)
 
-#### Unfixed Bugs
-As mentioned previously due to time constraints, I did not get a chance to add the option of only choosing a letter for the user guesses they can enter a number and will lose a chance. I do reiterate throughout the game to please enter a letter. I am sure it is likely a quick fix but on my 11th hour attempt I broke the code so reverted back and hope to fix it in the future as I am confident I can do it.
+
+I had an issue while playing the game a user could add any non alphebetical charater and the game woudl accept it and reduce the number of chances left. I created a function called letters_only and used isalpha() to omit this problem. 
 
 ![Number Bug](docs/readme_images/number_bug.JPG)
 
-There are many things that I wish I could have implemented and I hope i have tested the app enough so that the user can have a pleasant user experience. I also am aware that there is likely 10 better ways I could have wrote the code but I did enjoy the trial and error of figuring it out. 
-
+![Letters Only](docs/readme_images/letters_only_bug.JPG)
+ 
 ## Deployment
 
 This code was connected to Heroku via GitHub  using the following steps:
@@ -225,9 +229,6 @@ I learned alot about how to approach my README file from past projects of Code I
 
 - #### Slack
 Code Institute's slack channel was a huge help in helping with problems and to give a sense of what was expected for projects. Support from fellow students was greatly appreciated.
-
-- #### Mentor
-My mentor Guido Cecilio is always extrememly generous with his time. Unfortunatley due to my own work and travel schedule I was unable to coordinate with him for this project but I really look forward to discussing it with him. I am sure his advice would have been invaluable for this project but either way I will debrief with him and look forward to his insights.  
 
 - #### Cohort Facilitators
 Code Institutes Facilitators were great throughout the project, answering questions and encouraging us to the finish line. They also made it easy to stay on track and keep everyone up to date. Thanks Kenan Wright and Kascia Bogucka.

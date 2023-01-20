@@ -98,6 +98,7 @@ def letters_only():
         else:
             return user_input_letter
 
+
 # Variable to create graphic if the player guesses the country.
 FIREWORKS = """
                                  .''.
@@ -146,7 +147,7 @@ def start_game(word):
                 if guess in player_guesses:
                     print('You already guessed it. Try again')
                     continue
-            
+
             if current_country(word, player_guesses) == word:
                 print(Fore.LIGHTGREEN_EX + f'Yay! You guessed {word.upper()}!')
                 print("\n")
@@ -161,7 +162,7 @@ def start_game(word):
                     print("\n")
                     print(Fore.LIGHTYELLOW_EX + guess + " is not correct.")
                     chances -= 1
-                    
+
         else:
             print("\n")
             print(Fore.RED + "Hard luck! The destination was " + word.upper())
@@ -201,6 +202,7 @@ def clear_screen():
     """
     os.system("clear")
 
+
 while True:
     """
     Calls functions to run the game
@@ -209,4 +211,3 @@ while True:
     introduction_message()
     start_game(word)
     play_again()
-  
