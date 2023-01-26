@@ -4,7 +4,7 @@
 
 Destination Unknown is a simple word guessing game that I created where the word guessed by the player is a country from around the world. The name is a play on the popular song Destination Unknown by Alex Gaudino which I unknowingly kept singing while I was working on this game. Sorry if it is now in your head also!
 
-The game follows the same logic as most guessing word games. The user is told how many chances they have, calculated to be 1.5 times the length of the word. Every time they get a letter right it will show up in the word e.g. the user guesses 'a' this then reveals it was a correct guess and shows the word as *a*a*a. If the user guesses wrong then their chances decrease. A list of already guessed letters is shown to the user so that they can try and figure out the destination before they run out of lives. 
+The game follows the same logic as most guessing word games. The user is told how many chances they have, calculated by the length of the word. Every time they get a letter right it will show up in the word e.g. the user guesses 'a' this then reveals it was a correct guess and shows the word as *a*a*a. If the user guesses wrong then their chances decrease. A list of already guessed letters is shown to the user so that they can try and figure out the destination before they run out of lives. 
 
 It is a fun game to play for all ages and is suprisingly hard at times. It had me learning alot about countries I had never known existed after playing. I really enjoyed making it as my first go at a python based project. 
 
@@ -43,9 +43,8 @@ When creating this game I decided to use some colored fonts to help with the use
 
 I had written the functions so that only uppercase letters could be entered but as a user I found this frustrating so I removed it so that it would accept either lower or upper case and I found it made the game more enjoyable. 
 
-I sped up the time sleep function as the more I played the game the less I, as a user, wanted to play. 
+I sped up the time sleep function to help the game progress for the user. 
 
-I also increased the amount of chances the user gets from 1.2 * the length of the destination to 1.5* as some of the countries are really tricky. I found as a user I wanted to have a few more guesses. 
 
 ## Features
 #### Title
@@ -61,7 +60,7 @@ The user is asked to submit their name and given a description of the game so th
 
 #### Destination information
 
-The user will be told how many letter are in the destination word and told how many chances they have to guess the correct destination. 
+The user will be told how many letters are in the destination word and told how many chances they have to guess the correct destination. 
 
 ![Guess](docs/readme_images/guess.JPG)
 
@@ -173,7 +172,7 @@ I ran into issues with my play_again function but was able to solve this by chan
 ![Play_again Bug](docs/readme_images/bug.JPG)
 
 
-I had an issue while playing the game a user could add any non alphebetical charater and the game woudl accept it and reduce the number of chances left. I created a function called letters_only and used isalpha() to omit this problem. 
+I had an issue while playing the game a user could add any non alphebetical charater and the game woudl accept it and reduce the number of chances left. It also accepted empty characters which crashed the app. I created a function called letters_only and used isalpha() to omit this problem. 
 
 ![Number Bug](docs/readme_images/number_bug.JPG)
 

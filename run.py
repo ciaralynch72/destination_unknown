@@ -42,7 +42,7 @@ def introduction_message():
             print("\n")
             print("* Guess one letter at a time")
             print("\n")
-            print("* Your chances will be based on 1.5 * the length of")
+            print("* Your chances will be based on the length of")
             print("letters in the countries name.")
             print("\n")
             print("* If you guess correct your chances remain the same.")
@@ -54,6 +54,8 @@ def introduction_message():
             print("\n")
             print(f'Good luck, {Fore.LIGHTGREEN_EX}{name}!')
             print("\n")
+            time.sleep(2.5)
+            clear_screen()
             break
 
 
@@ -125,8 +127,8 @@ def start_game(word):
     """
     # create an emply list to display player guesses
     player_guesses = []
-    # Gives the player 1.5 times the length of the word to guess the country
-    chances = len(word)*int(1.5)
+    # Chances are based on the lenght of the word
+    chances = len(word)
     print("\n")
     print(Fore.LIGHTCYAN_EX + f'The destination has {str(len(word))} letters.')
     while True:
@@ -146,6 +148,8 @@ def start_game(word):
             else:
                 if guess in player_guesses:
                     print('You already guessed it. Try again')
+                    time.sleep(0.75)
+                    clear_screen()
                     continue
 
             if current_country(word, player_guesses) == word:
@@ -188,7 +192,7 @@ def play_again():
     if go_again == ("yes"):
         choose_country()
     elif go_again == ("no"):
-        print(Fore.LIGHTGREEN_EX + "Thanks you for playing!")
+        print(Fore.LIGHTGREEN_EX + "Thank you for playing!")
         goodbye_message()
     else:
         print("Sorry invalid entry.")
