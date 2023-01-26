@@ -54,7 +54,7 @@ def introduction_message():
             print("\n")
             print(f'Good luck, {Fore.LIGHTGREEN_EX}{name}!')
             print("\n")
-            time.sleep(2.5)
+            clear_screen()
             break
 
 
