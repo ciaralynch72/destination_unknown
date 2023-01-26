@@ -35,8 +35,8 @@ def introduction_message():
             print(f"{Fore.LIGHTYELLOW_EX}Your name must be alphabetic only")
             continue
         else:
-            print("\n")
-            print(Fore.RESET + "* Destination Unknown is a word guessing")
+            print(Fore.RESET + "\n")
+            print("* Destination Unknown is a word guessing")
             print(" game where the player is trying to guess the name")
             print(" off a country!")
             print("\n")
@@ -54,6 +54,7 @@ def introduction_message():
             print("\n")
             print(f'Good luck, {Fore.LIGHTGREEN_EX}{name}!')
             print("\n")
+            time.sleep(0.5)
             clear_screen()
             break
 
