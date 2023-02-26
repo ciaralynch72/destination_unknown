@@ -172,18 +172,13 @@ I ran into issues with my play_again function but was able to solve this by chan
 ![Play_again Bug](docs/readme_images/bug.JPG)
 
 
-I had an issue while playing the game a user could add any non alphebetical charater and the game woudl accept it and reduce the number of chances left. It also accepted empty characters which crashed the app. I created a function called letters_only and used isalpha() to omit this problem. 
+I had an issue while playing the game a user could add any non alphebetical character and the game woudl accept it and reduce the number of chances left. It also accepted empty characters which crashed the app. I created a function called letters_only and used isalpha() to omit this problem. 
 
 ![Number Bug](docs/readme_images/number_bug.JPG)
 
 ![Letters Only](docs/readme_images/letters_only_bug.JPG)
  
 ## Deployment
-
-This code was connected to Heroku via GitHub  using the following steps:
-1. I created the repository from the Code Institute Python template.
-
-## Clone Project ##
 
 The site was deployed via [Heroku](https://dashboard.heroku.com/apps), and the live link can be found here: [Destination Unknown](https://destinationunknown1.herokuapp.com/)
 
@@ -192,7 +187,7 @@ Before deploying to Heroku pip3 freeze > requirements.txt was used to add all th
 The following steps were then taken:
 1. Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
 2. On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
-3. Enter a unique and meaningful app name.
+3. Enter app name.
 4. Next select your region.
 5. Click on the Create App button.
 6. Click on the Settings Tab and scroll down to Config Vars.
@@ -209,6 +204,14 @@ platform for me so I wanted to make sure my final code was deployed.
 
 The site is now live and operational.
 
+### To Clone the repository on GitHub
+
+1. Click on the code button which is underneath the main tab and repository name to the right.
+2. In the "Clone with HTTPS' section, click on the clipboard icon to copy the URL.
+3. Open Git Bash in your IDE of choice.
+4. Change the current working directory to where you wan the cloned directory to be made.
+5. Type git clone, and then paste the URL copied form GitHub.
+6. Press enter and the clone of your repository will be created.
 ## Credits
 
 - #### Copy
